@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      双向绑定还有另一种解决方案，即 sync 修饰符。与 v-model
+      不同的是，它不需要你的组件有一个 <input> 标签并将值绑定到它上面。它仅触发
+      update:<your_prop> 通过事件系统对属性进行突变。
+    </title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var myCheckbox = Vue.component("myCheckbox", {
+        //   这里可以不用input标签
+        // <input type="checkbox" :value="value" @input="handleInputChange(value)" />
+        template: `
+          <button @click="handleChange">点击</button>
+        `,
+        props: {
+          value: {
+            type: Boolean,
+            default: false,
+          },
+        },
+        methods: {
+          handleChange() {
+            const o = !this.value;
+            this.$emit("update:value", o); //这里的 update： 固定写法不能改
+          },
+        },
+      });
+      new Vue({
+        el: "#app",
+        component: {
+          myCheckbox,
+        },
+        data: { val: true },
+        watch: {
+          val(newp) {
+            console.log(newp);
+          },
+        },
+        // <!--语法糖.sync-->
+        template: `
+          <my-checkbox :value.sync="val"></my-checkbox>
+          `,
+        // <!--编译后的写法-->
+        // <my-component
+        //   :value="msg"
+        //   @update:value="(val) => value = val"
+        // >
+      });
+    </script>
+  </body>
+</html>
