@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* 
+         CSS 中的 place-items 是一个简写属性 ，它允许你在相关的布局（如 Grid 或 Flexbox）中可以同时沿着块级和内联方向对齐元素 
+         (例如：align-items 和 justify-items 属性) 。如果未提供第二个值，则第一个值作为第二个值的默认值。
+         */
+      .grid__container {
+        /* 或 inline-grid */
+        display: grid;
+        place-items: center;
+        height: 100px;
+      }
+      .grid__item {
+        /* display: grid;
+        place-items: center; */
+        height: 60px;
+      }
+      .red {
+        color: red;
+        font-weight: bold;
+      }
+      .denggao {
+        height: 40px;
+        display: flex;
+        /* justify-content:space-around; */
+        /* 默认stretch */
+        align-items: stretch;
+      }
+      .stickyfooter {
+        display: flex;
+        flex-direction: column;
+      }
+      footer {
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="red">水平垂直居中布局</p>
+    <div class="grid__container">
+      <div class="grid__item">居中</div>
+    </div>
+    <p class="red">等高布局</p>
+    <div class="denggao">
+      <div class="denggao-item">高0</div>
+      <div class="denggao-item">高1</div>
+      <div class="denggao-item">高2</div>
+    </div>
+    <p class="red">Sticky Footer布局</p>
+    <div class="stickyfooter">
+      <p>常见</p>
+      <div>
+        header<br />
+        main<br />
+        footer<br />
+      </div>
+    </div>
+    <p class="red">圣杯布局</p>
+    
+  </body>
+</html>
