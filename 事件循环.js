@@ -1,11 +1,11 @@
 // 作者 ：凉玉
-// 简称set1
 new Promise((resolve)=>{
     setTimeout(()=>{
         resolve();
         console.log("promise-resolve");   //1.5
     },0)
 })
+// 简称set1
 setTimeout(()=>{
     console.log('timer1')  //2
     Promise.resolve().then(function() {
@@ -38,6 +38,7 @@ console.log('start')        // 0
 3、检查microtask checkpoint，看microtask队列中是否有任务。
 4、运行microtask中所有的任务，输出promise3。
 5、清空microtask队列之后，进入下一个循环。
+// --------执行了第一个任务 0  以及其下的微任务 1 1.5-----然后进入下个任务
 
 循环二
 
@@ -45,6 +46,7 @@ console.log('start')        // 0
 2、检查microtask checkpoint，看microtask队列中是否有任务。
 3、运行microtask中所有的任务，输出promise1。
 4、清空microtask队列之后，进入下一个循环。
+// -------执行第二个任务 set1--2 以及其下的微任务3---- 
 
 循环三
 

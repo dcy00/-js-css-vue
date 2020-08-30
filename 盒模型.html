@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       button{
+           /* box-sizing: border-box; */
+           box-sizing: content-box;
+           height:100px;
+           border:10px solid red;
+           padding:20px;
+       }
+       .ie button{
+           box-sizing: content-box;
+       }
+    </style>
+</head>
+<body>
+    <div class="w3c">
+        <p>w3c盒模型  box-sizing: content-box;时 设置宽度=内容的宽度</p>
+        <button>
+            正
+        </button>
+    </div>
+    <div class="ie">
+        <p>ie盒模型  box-sizing: content-box; ie8以下 设置的宽度=内容的宽度+padding宽度+border宽度</p>
+        <button>
+            正
+        </button>
+    </div>
+</body>
+</html>
