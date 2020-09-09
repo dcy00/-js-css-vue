@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>1222222332112</div>
+    <img
+      src="https://t7.baidu.com/it/u=378254553,3884800361&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1600224402&t=831ac483178a1df2120057b190df6982"
+      alt=""
+    />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script>
+      window.onready = () => {
+        console.log("onready");         //-------------2
+      };
+      window.onload = () => {
+        console.log("onload");          //-------------3
+      };
+      //   $(document).ready(function(){
+      //     // 在这里写你的代码...
+      //   });
+      //   该方法等同于 这个方法纯粹是对向window.load事件注册事件的替代方法。
+      //   通过使用这个方法，可以在DOM载入就绪能够读取并操纵时立即调用你所绑定的函数，而99.99%的JavaScript函数都需要在那一刻执行。
+      $(function ($) {
+        // 你可以在这里继续使用$作为别名...
+        console.log("ready--DOM就绪");                     //------------1
+      });
+      /**
+       * 1.onready比onload先执行
+            执行时间 window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行。
+            $(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。
+        2.onload只执行最后一个而onready可以执行多个。
+            编写个数不同 window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个。 
+            $(document).ready()可以同时编写多个,
+            并且都可以得到执行
+            $(document).ready(function(){})可以简写成$(function(){});
+      */
+    </script>
+  </body>
+</html>

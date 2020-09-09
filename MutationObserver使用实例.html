@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 变动观察器示例</title>
+    <style>
+      .editor {border: 1px dashed grey; width: 400px; height: 300px;}
+    </style>
+  </head>
+  <body>
+    <h3>阿宝哥：DOM 变动观察器（Mutation observer）</h3>
+    <div contenteditable id="container" class="editor">大家好，我是阿宝哥！
+        <p>zzzz</p>
+    </div>
+
+    <script>
+      const containerEle = document.querySelector("#container");
+
+      let observer = new MutationObserver((mutationRecords) => {
+        console.log(mutationRecords); // 输出变动记录
+      });
+
+      observer.observe(containerEle, {
+        subtree: true, // 监视node所有后代的变动
+        characterDataOldValue: true, // 记录任何有变动的属性的旧值
+      });
+    </script>
+  </body>
+</html>

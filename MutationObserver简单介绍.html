@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MutationObserver 接口提供了监视对 DOM 树所做更改的能力。</title>
+</head>
+<body>
+    <div>
+        MutationObserver 有以下特点：
+        <ul>
+            <li>它等待所有脚本任务执行完成后，才会运行，它是异步触发的。
+                即会等待当前所有 DOM 操作都结束才触发，这样设计是为了应对 DOM 频繁变动的问题。</li>
+            <li>
+                它把 DOM 变动记录封装成一个数组进行统一处理，而不是一条一条进行处理。
+            </li>
+            <li>
+                它既可以观察 DOM 的所有类型变动，也可以指定只观察某一类变动。
+            </li>
+        </ul>
+    </div>
+    <div>兼容性：</div>
+    <p>从上图可知，目前主流的 Web 浏览器基本都支持 MutationObserver API，而对于 IE 浏览器只有 IE 11 才支持。在项目中，如需要使用  MutationObserver API，
+        首先我们需要创建 MutationObserver 对象，因此接下来我们来介绍 MutationObserver 构造函数。</p>
+    <div>使用：</div>
+    <!-- https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650593273&idx=1&sn=d3322ce7867c71c23d213e95e0e62198&chksm=8891c7ddbfe64ecb7c3b93badcb53dddca347a1c23fd7273f3355bf9603afbeacf9ba42244e6&scene=126&sessionid=1599614601&key=2449a805bf2823878b53acb4ddae9f8f32b161b001e43d0eb800d39080907623396139696e33eedf2db81047b53d7db54d7878cb78c82da7b934277d499a7d3446f9aa405eaea3801ad1eb1abdd867728f861d7e51ce2d61296e7c7e156a97965d9e2fd9c0e078d009f0af9b92b4c3c81c91520466ea72881786be06cea88a36&ascene=1&uin=MjY3Mzc2MzkwOQ%3D%3D&devicetype=Windows+10+x64&version=62090529&lang=zh_CN&exportkey=A3Fe2WFReZx7%2BNJ%2FmP%2B%2FHtQ%3D&pass_ticket=zkcKB6791icxBu0maGS7sjV6a3vQAH%2FqzjN%2Biy%2FZNY0abGVyCPZtc%2FQU9to5BINF&wx_header=0 -->
+</body>
+</html>
